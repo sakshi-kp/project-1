@@ -12,14 +12,14 @@ pipeline{
                 git branch: 'main',url:'https://github.com/sakshi-kp/project-1.git'
             }
         }
+        stage('Build'){
+            steps{
+                sh "mvn clean install"
+            }
+        }
         stage('compile'){
             steps{
                 sh "mvn compile"
-            }
-        }
-        stage('build'){
-            steps{
-                sh "mvn clean install"
             }
         }
     }
